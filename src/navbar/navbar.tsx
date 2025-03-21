@@ -1,29 +1,22 @@
-// src/components/Navbar.tsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-interface NavbarProps {
-  // You can define props here if needed
-}
-
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC = () => {
   return (
     <nav style={styles.navbar}>
-      {/* Logo or Site Name on the left */}
       <div style={styles.logo}>MarketX</div>
-
-      {/* Navigation Links on the right */}
       <ul style={styles.navList}>
         <li style={styles.navItem}>
-          <a href="/" style={styles.navLink}>Home</a>
+          <Link to="/" style={styles.navLink}>Home</Link>
         </li>
         <li style={styles.navItem}>
-          <a href="/about" style={styles.navLink}>About</a>
+          <Link to="/about" style={styles.navLink}>About</Link>
         </li>
         <li style={styles.navItem}>
-          <a href="/services" style={styles.navLink}>Services</a>
+          <Link to="/services" style={styles.navLink}>Services</Link>
         </li>
         <li style={styles.navItem}>
-          <a href="/contact" style={styles.navLink}>Contact</a>
+          <Link to="/contact" style={styles.navLink}>Contact</Link>
         </li>
       </ul>
     </nav>
@@ -32,17 +25,17 @@ const Navbar: React.FC<NavbarProps> = () => {
 
 const styles = {
   navbar: {
-    backgroundColor: 'transparent', // Transparent background
+    backgroundColor: 'transparent',
     padding: '20px 40px',
-    position: 'sticky' as "sticky", // Sticky position
-    top: 0, // Stick to the top
+    position: 'sticky' as "sticky",
+    top: 0,
     display: 'flex',
-    justifyContent: 'space-between', // Space between logo and nav links
-    alignItems: 'center', // Vertically center items
-    zIndex: 1000, // Ensure navbar stays on top of other content
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    zIndex: 1000,
   },
   logo: {
-    color: '#fff', // White color for the logo
+    color: 'black', 
     fontSize: '24px',
     fontWeight: 'bold',
     textDecoration: 'none',
@@ -57,10 +50,10 @@ const styles = {
     margin: '0 10px',
   },
   navLink: {
-    color: '#fff', // White color for the links
+    color: 'black',
     textDecoration: 'none',
     fontSize: '18px',
-    transition: 'color 0.3s ease', // Smooth color transition on hover
+    transition: 'color 0.3s ease',
   },
 };
 
