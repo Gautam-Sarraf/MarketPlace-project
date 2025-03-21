@@ -18,6 +18,9 @@ const Navbar: React.FC = () => {
         <li style={styles.navItem}>
           <Link to="/contact" style={styles.navLink}>Contact</Link>
         </li>
+        <li style={styles.navItem}>
+          <Link to="/login" style={styles.navLink}>login</Link>
+        </li>
       </ul>
     </nav>
   );
