@@ -13,7 +13,10 @@ const Navbar: React.FC = () => {
           <Link to="/about" style={styles.navLink}>About</Link>
         </li>
         <li style={styles.navItem}>
-          <Link to="/services" style={styles.navLink}>Services</Link>
+          <Link to="/sell" style={styles.navLink}>Sell</Link>
+        </li>
+        <li style={styles.navItem}>
+          <Link to="/buy" style={styles.navLink}>Market</Link>
         </li>
         <li style={styles.navItem}>
           <Link to="/contact" style={styles.navLink}>Contact</Link>
