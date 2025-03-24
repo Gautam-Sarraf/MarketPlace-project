@@ -1,28 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const Layout = () => {
-  const containerVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        staggerChildren: 0.2, // Delays each child animation
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5 },
-    },
-  };
   return (
-    <div>
+    <div style={{ padding: '20px', borderRadius: '12px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '1200px', margin: '0 auto' }}>
         {/* Container for the whole layout */}
 
@@ -100,10 +80,9 @@ const Layout = () => {
       {/* Divider */}
       <hr style={{ border: '1px solid #ddd', margin: '20px 0' }} />
 
-
       {/* About Section */}
       <div style={{ padding: '20px', textAlign: 'center' }}>
-        
+        <h2>About Us</h2>
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'space-around', padding: '40px 20px', gap: '20px' }}>
@@ -113,32 +92,20 @@ const Layout = () => {
           { title: 'HOW IT WORKS', color: '#1565c0', bg: '#bbdefb', text: 'Buyers can browse and purchase in a few clicks, while sellers can easily list and manage their products.' },
           { title: 'OUR COMMITMENT', color: '#e65100', bg: '#ffe0b2', text: 'We are committed to fair trade, eco-friendly packaging, and supporting small businesses globally.' }
         ].map((item, index) => (
-          <motion.div
+          <div
             key={index}
-            whileHover={{ scale: 1.05, boxShadow: '0px 10px 20px rgba(0,0,0,0.2)' }}
-            whileTap={{ scale: 0.95 }}
             style={{ backgroundColor: item.bg, padding: '30px', borderRadius: '12px', textAlign: 'left', flex: '1' }}
           >
             <h3 style={{ margin: '0 0 10px', fontSize: '1.4em', color: item.color }}>{item.title}</h3>
             <p style={{ margin: '10px 0', fontSize: '1em', lineHeight: '1.6' }}>{item.text}</p>
-          </motion.div>
+          </div>
         ))}
       </div>
-    
 
       {/* Trending Categories Section */}
-     
-
-    <div>
-      {/* Other content */}
       <div style={{ padding: '20px', textAlign: 'center' }}>
         <h2 style={{ marginBottom: '20px' }}>Trending Categories</h2>
-        <motion.div
-          style={{ display: 'flex', overflowX: 'auto', gap: '20px', padding: '10px' }}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div style={{ display: 'flex', overflowX: 'auto', gap: '20px', padding: '10px' }}>
           {[
             {
               name: 'Smart Watch',
@@ -166,11 +133,8 @@ const Layout = () => {
               bgColor: '#D1C4E9',
             },
           ].map((product, index) => (
-            <motion.div
+            <div
               key={index}
-              whileHover={{ scale: 1.05, boxShadow: '0px 10px 20px rgba(0,0,0,0.2)' }}
-              whileTap={{ scale: 0.95 }}
-              variants={itemVariants}
               style={{
                 backgroundColor: product.bgColor,
                 padding: '15px',
@@ -191,31 +155,14 @@ const Layout = () => {
                 }}
               />
               <h4 style={{ margin: '10px 0 5px', fontSize: '1.2em' }}>{product.name}</h4>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
+      <hr style={{ border: '1px solid #ddd', margin: '20px 0' }} />
+    
+    
     </div>
-    <hr style={{ border: '1px solid #ddd', margin: '20px 0' }} />
-    {/* Our Speciality Heading */}
-    <div style={{ padding: '20px', textAlign: 'center' }}>
-        <h2 style={{ marginBottom: '20px' }}>Our Speciality</h2>
-      </div>
- 
-      <div style={{ padding: '20px', textAlign: 'center' }}>
-        <p style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#333' }}>
-          Users can negotiate the prices of items directly with sellers to get the best price with our specialized chat Application.
-        </p>
-      </div>
-    </div>
-    
-    
-    
-          
-          
-        
-        
-    
   );
 };
 
