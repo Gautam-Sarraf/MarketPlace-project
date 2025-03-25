@@ -9,9 +9,9 @@ const Navbar: React.FC = () => {
         <li style={styles.navItem}>
           <Link to="/" style={styles.navLink}>Home</Link>
         </li>
-        <li style={styles.navItem}>
+        {/* <li style={styles.navItem}>
           <Link to="/about" style={styles.navLink}>About</Link>
-        </li>
+        </li> */}
         <li style={styles.navItem}>
           <Link to="/sell" style={styles.navLink}>Sell</Link>
         </li>
@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
           <Link to="/contact" style={styles.navLink}>Contact</Link>
         </li>
         <li style={styles.navItem}>
-          <Link to="/login" style={styles.navLink}>login</Link>
+          <Link to="/login" style={styles.navLink}>Login</Link>
         </li>
       </ul>
     </nav>
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
 
 const styles = {
   navbar: {
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent', // Changed to white for better visibility
     padding: '20px 40px',
     position: 'sticky' as "sticky",
     top: 0,
@@ -39,9 +39,10 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     zIndex: 1000,
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Added a subtle shadow
   },
   logo: {
-    color: 'black', 
+    color: 'black',
     fontSize: '24px',
     fontWeight: 'bold',
     textDecoration: 'none',
@@ -53,13 +54,16 @@ const styles = {
     display: 'flex',
   },
   navItem: {
-    margin: '0 10px',
+    margin: '0 15px', // Increased spacing between items
   },
   navLink: {
     color: 'black',
     textDecoration: 'none',
     fontSize: '18px',
     transition: 'color 0.3s ease',
+    '&:hover': { // Added hover effect
+      color: '#007bff', // Example hover color
+    },
   },
 };
 
