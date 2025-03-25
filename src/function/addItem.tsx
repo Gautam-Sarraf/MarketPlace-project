@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./AddItemPage.css"; // Import the external CSS file
+import "./AddItemPage.css"; 
 
 interface Item {
   id: number;
-  images: string[]; // Store image URLs
+  images: string[]; 
   price: number;
   location: string;
   description: string;
