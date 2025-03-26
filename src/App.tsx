@@ -2,10 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './navbar/navbar';
 import Home from './Home/homepage';
-// import About from './pages/About';
-// import Services from './pages/Services';
-// import Contact from './pages/Contact';
 import './App.css';
+import { Login } from '@mui/icons-material';
+import LoginPage from './login';
 
 function App() {
   return (
@@ -14,7 +13,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-        </Routes>
+          <Route path="/login" element={<LoginPage />} />
+          </Routes>
       </div>
     </Router>
   );
