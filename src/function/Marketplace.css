@@ -96,23 +96,24 @@
     color: #444;
   }
   
-  /* Buy Button */
-  .buy-button {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    margin-top: 8px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .buy-button:hover {
-    background-color: #218838;
-  }
+  /* Send Message Button */
+.message-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.message-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
   

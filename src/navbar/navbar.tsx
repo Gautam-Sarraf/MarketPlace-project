@@ -19,9 +19,6 @@ const Navbar: React.FC = () => {
           <Link to="/buy" style={styles.navLink}>Market</Link>
         </li>
         <li style={styles.navItem}>
-          <Link to="/contact" style={styles.navLink}>Contact</Link>
-        </li>
-        <li style={styles.navItem}>
           <Link to="/login" style={styles.navLink}>Login</Link>
         </li>
       </ul>

@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './navbar/navbar';
 import Home from './Home/homepage';
-import Marketplace from './function/buyItem';
 import AddItemPage from './function/addItem';
+import Marketplace from './function/buyItem';
+import LoginPage from './login';
 import './App.css';
 
-interface Item {
+type Item = {
   id: number;
-  images: string[];
+  images: string[]; 
   price: number;
   location: string;
   description: string;
-}
+};
 
 function App() {
   const [items, setItems] = useState<Item[]>([]);
@@ -26,14 +27,14 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/sell" element={<AddItemPage onAdd={handleAddItem} />} />
           <Route path="/buy" element={<Marketplace items={items} />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </div>
     </Router>
   );
 }
-
 
 export default App;
