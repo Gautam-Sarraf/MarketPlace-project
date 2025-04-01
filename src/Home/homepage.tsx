@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+//import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'; // Import social media icons
 
 const Layout = () => {
   return (
@@ -111,57 +113,128 @@ const Layout = () => {
               name: 'Smart Watch',
               image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQEbXg1Q9Dx8zWNDxnj4yUCTNCnICM28veDrsstJ15LJhmIkyWRee9qnyM5eOyW4W9zegF1yVvdfl4m8ibSwt-AnaSBcJKvdyF0_aun1NpQwbeC9gmdfXeL',
               bgColor: '#FFCDD2',
+              link: '/products/smart-watch',
             },
             {
               name: 'Wireless Earbuds',
               image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTzJwCRznZWh95VUlSFWbJVtOHpGpGnPiD1jKpmp6WQHfaxM2_rQZhDSS1JVuPrqYPnbHzfTTY6OUi5qrdqKmmNId2jGR5B_93MtTEylyCc52Tgp29XDY_I85w',
               bgColor: '#C8E6C9',
+              link: '/products/wireless-earbuds',
             },
             {
               name: 'Sneakers',
               image: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTU0G9NGLq4ZteIQsL5v3miTDLmNiI9KC9ZR3YyY3D8G9cRNCleT8RNQfnCgumMZQqXNzPOtfj35VuwGjs6bAjXlAuKFu0aINub77X_Aurig2zFIvQOI0ZUnw',
               bgColor: '#BBDEFB',
+              link: '/products/sneakers',
             },
             {
               name: 'Designer Handbag',
               image: 'https://images.meesho.com/images/products/442519293/xjwgv_1200.jpg',
               bgColor: '#FFECB3',
+              link: " ",
             },
             {
               name: 'Gaming Headset',
               image: 'https://whatnot.in/wp-content/uploads/2023/08/61m35lRdcxL._SX679_.jpg',
               bgColor: '#D1C4E9',
+              link: '/products/gaming-headset',
+            },
+            {
+              name: 'Fitness Tracker',
+              image: 'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1727359929-65adf4ee7807346a1a6545c0-whoop-4-0-with-12-month-subscription-66f56bad32455.jpg?crop=0.894xw:0.894xh;0.0561xw,0.0561xh&resize=980:*',
+              bgColor: '#FFAB91',
+              link: '/products/fitness-tracker',
             },
           ].map((product, index) => (
-            <div
+            <Link
               key={index}
+              to={product.link}
               style={{
-                backgroundColor: product.bgColor,
-                padding: '15px',
-                borderRadius: '8px',
-                textAlign: 'center',
-                minWidth: '200px',
-                boxShadow: '0px 5px 15px rgba(0,0,0,0.1)',
+                textDecoration: 'none',
+                color: 'inherit',
               }}
             >
-              <img
-                src={product.image}
-                alt={product.name}
+              <div
                 style={{
-                  width: '100%',
-                  height: '150px',
-                  objectFit: 'cover',
-                  borderRadius: '5px',
+                  backgroundColor: product.bgColor,
+                  padding: '15px',
+                  borderRadius: '8px',
+                  textAlign: 'center',
+                  minWidth: '200px',
+                  boxShadow: '0px 5px 15px rgba(0,0,0,0.1)',
                 }}
-              />
-              <h4 style={{ margin: '10px 0 5px', fontSize: '1.2em' }}>{product.name}</h4>
-            </div>
+              >
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={{
+                    width: '100%',
+                    height: '150px',
+                    objectFit: 'cover',
+                    borderRadius: '5px',
+                  }}
+                />
+                <h4 style={{ margin: '10px 0 5px', fontSize: '1.2em' }}>{product.name}</h4>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
-      <hr style={{ border: '1px solid #ddd', margin: '20px 0' }} />
-    
-    
+
+      {/* Contact Form Section */}
+      <div style={{ padding: '20px', borderRadius: '12px' ,backgroundColor: '#f0f0f0' ,width: '500px', margin: '0 auto', }}>
+        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Contact Us</h2>
+        <form style={{ display: 'flex', flexDirection: 'column', maxWidth: '600px', margin: '0 auto', gap: '15px' }}>
+          <input type="text" placeholder="Your Name" style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }} />
+          <input type="email" placeholder="Your Email" style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }} />
+          <textarea placeholder="Your Message"  style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}></textarea>
+          <button type="submit" style={{ backgroundColor: '#4CAF50', color: 'white', padding: '10px 15px', borderRadius: '5px', border: 'none', cursor: 'pointer' }}>Submit</button>
+        </form>
+      </div>
+
+      {/* Footer Section */}
+     {/* Footer Section */}
+     <footer
+        style={{
+          backgroundColor: 'black',
+          color: 'white',
+          textAlign: 'center',
+          padding: '20px',
+          position: 'relative',
+          bottom: '0',
+          left: '0',
+          width: '100%',
+        }}
+      >
+         <p>&copy; {new Date().getFullYear()} Market X. All rights reserved.</p>
+        <p>Contact: support@marketx.com</p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginTop: '10px' }}>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'white', fontSize: '1.5em' }}
+          >
+            
+          </a>
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'white', fontSize: '1.5em' }}
+          >
+          
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'white', fontSize: '1.5em' }}
+          >
+            
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };
