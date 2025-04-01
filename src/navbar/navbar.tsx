@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
 
 const styles = {
   navbar: {
-    backgroundColor: 'transparent', // Changed to white for better visibility
+    backgroundColor: 'white', // Changed to white for better visibility
     padding: '20px 40px',
     position: 'sticky' as "sticky",
     top: 0,
